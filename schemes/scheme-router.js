@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { id } = req.params;
 
-  Schemes.findById(id)
+  Schemes.find(id)
   .then(scheme => {
     if (scheme) {
       res.json(scheme);
@@ -62,7 +62,7 @@ router.post('/:id/steps', (req, res) => {
   const stepData = req.body;
   const { id } = req.params; 
 
-  Schemes.findById(id)
+  Schemes.find(id)
   .then(scheme => {
     if (scheme) {
       Schemes.addStep(stepData, id)
@@ -82,7 +82,7 @@ router.put('/:id', (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
-  Schemes.findById(id)
+  Schemes.find(id)
   .then(scheme => {
     if (scheme) {
       Schemes.update(changes, id)
