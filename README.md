@@ -18,39 +18,39 @@ For this lab you will
 
 Use a graphical tool like `SQLite Studio` to open `./data/northwind.db3` and execute the following queries:
 
--   Display the ProductName and CategoryName for all products in the database. Returns 77 records.
--   Display the order Id and shipper CompanyName for all orders placed before August 9 2012. Returns 429 records.
--   Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Returns 3 records.
--   Display the OrderID, customer's Company Name and the employee's Last Name for every order. All columns should be labeled clearly. Returns 16,789 records.
+-   [x] Display the ProductName and CategoryName for all products in the database. Returns 77 records.
+-   [x] Display the order Id and shipper CompanyName for all orders placed before August 9 2012. Returns 429 records.
+-   [x] Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Returns 3 records.
+-   [x] Display the OrderID, customer's Company Name and the employee's Last Name for every order. All columns should be labeled clearly. Returns 16,789 records.
 
 ### Database Methods
 
 Write helpers methods in `./schemes/scheme-model.js` that match the following specifications:
 
--   `find()`:
-    -   Calling find returns a promise that resolves to an array of all schemes in the database.
-    -   No steps are included.
+- [x] `find()`:
+    - [x] Calling find returns a promise that resolves to an array of all schemes in the database.
+    - [x] No steps are included.
 -   `findById(id)`:
-    -   Expects a scheme `id` as its only parameter.
-    -   Resolve to a single scheme object.
-    -   On an invalid `id`, resolves to `null`.
--   `findSteps(id)`:
-    -   Expects a scheme `id`.
-    -   Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
-    -   This array should include the `scheme_name` _not_ the `scheme_id`.
--   `add(scheme)`:
-    -   Expects a scheme object.
-    -   Inserts scheme into the database.
-    -   Resolves to the newly inserted scheme, including `id`.
--   `update(changes, id)`:
-    -   Expects a changes object and an `id`.
-    -   Updates the scheme with the given id.
-    -   Resolves to the newly updated scheme object.
--   `remove(id)`:
-    -   Removes the scheme object with the provided id.
-    -   Resolves to the removed scheme
-    -   Resolves to `null` on an invalid id.
-    -   (Hint: Only worry about removing the `scheme`. The database is configured to automatically remove all associated steps.)
+    - [x] Expects a scheme `id` as its only parameter.
+    - [x] Resolve to a single scheme object.
+    - [x] On an invalid `id`, resolves to `null`.
+- [ ] `findSteps(id)`:
+    - [x] Expects a scheme `id`.
+    - [x] Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
+    - [x] This array should include the `scheme_name` _not_ the `scheme_id`.
+- [x] `add(scheme)`:
+    - [x] Expects a scheme object.
+    - [x] Inserts scheme into the database.
+    - [x] Resolves to the newly inserted scheme, including `id`.
+- [x] `update(changes, id)`:
+    - [x] Expects a changes object and an `id`.
+    - [x] Updates the scheme with the given id.
+    - [x] Resolves to the newly updated scheme object.
+- [x] `remove(id)`:
+    - [x] Removes the scheme object with the provided id.
+    - [x] Resolves to the removed scheme
+    - [x] Resolves to `null` on an invalid id.
+    - [x] (Hint: Only worry about removing the `scheme`. The database is configured to automatically remove all associated steps.)
 
 #### Schemes Schema
 
@@ -81,9 +81,9 @@ The following endpoints are available to test the functionality of the model met
 
 ## Stretch Problems
 
--   In [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/tryit.asp?filename=trysql_select_top):
-    -   Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 8 records.
-    -   Display OrderID and a column called ItemCount that shows the total number of products placed on the order. Shows 196 records.
--   Add the following method to your API
-    -   `addStep(step, scheme_id)`: This method expects a step object and a scheme id. It inserts the new step into the database, correctly linking it to the intended scheme.
-    -   You may use `POST /api/schemes/:id/addStep` to test this method.
+- [x] In [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/tryit.asp?filename=trysql_select_top):
+    - [x] Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 8 records.
+    - [x] Display OrderID and a column called ItemCount that shows the total number of products placed on the order. Shows 196 records.
+- [x] Add the following method to your API
+    - [x] `addStep(step, scheme_id)`: This method expects a step object and a scheme id. It inserts the new step into the database, correctly linking it to the intended scheme.
+    - [x] You may use `POST /api/schemes/:id/addStep` to test this method.
